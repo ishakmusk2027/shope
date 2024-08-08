@@ -59,7 +59,7 @@ client.on("interactionCreate", async (interaction) => {
       let embed = new Discord.EmbedBuilder()
         .setDescription(
           `
-من فضلك انتظر <t:${Math.floor((Date.now() + 7200000) / 1000)}:R>
+من فضلك انتظر <t:${Math.floor((Date.now() + 720) / 100)}:R>
 للشراء مره اخرى
 `
         )
@@ -69,7 +69,7 @@ client.on("interactionCreate", async (interaction) => {
       talkedRecently.add(interaction.user.id);
       setTimeout(() => {
         talkedRecently.delete(interaction.user.id);
-      }, 7200000);
+      }, 720);
       let roles = interaction.options.getString("roles");
       if (roles == "1") {
         const resulting = tax.taxs(Data.role1.Price);
